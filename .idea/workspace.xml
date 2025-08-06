@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="219ae286-f3e1-4b12-a0b0-7f5c1362598b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/server/controllers/user-controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/token-model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/user-model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/service/mail-service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/service/token-service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/service/user-service.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="30VQ5Nhk4R7ILO1lN7NHhUVps9M" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/ihor/Documents/projects/react/jwt-auth",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "inlay.hints",
+    "ts.external.directory.path": "/Users/ihor/Documents/projects/react/jwt-auth/client/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="jwt-auth" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="jwt-auth" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="219ae286-f3e1-4b12-a0b0-7f5c1362598b" name="Changes" comment="" />
+      <created>1753710075382</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1753710075382</updated>
+      <workItem from="1753710076463" duration="290000" />
+      <workItem from="1753710372211" duration="11047000" />
+      <workItem from="1753808876325" duration="620000" />
+      <workItem from="1753898750648" duration="314000" />
+      <workItem from="1753902283533" duration="461000" />
+      <workItem from="1753902760833" duration="5727000" />
+      <workItem from="1754410577862" duration="438000" />
+      <workItem from="1754411024713" duration="854000" />
+      <workItem from="1754412206547" duration="77000" />
+      <workItem from="1754412295901" duration="366000" />
+      <workItem from="1754412667508" duration="64000" />
+      <workItem from="1754412735674" duration="41000" />
+      <workItem from="1754412781265" duration="3265000" />
+      <workItem from="1754416600025" duration="31000" />
+      <workItem from="1754416635669" duration="755000" />
+      <workItem from="1754418841089" duration="5199000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

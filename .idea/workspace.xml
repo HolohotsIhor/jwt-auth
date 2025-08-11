@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="219ae286-f3e1-4b12-a0b0-7f5c1362598b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/controllers/user-controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/token-model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/user-model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/router/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/service/mail-service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/service/token-service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/service/user-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/user-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/user-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/token-model.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/token-model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/service/token-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/service/token-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/service/user-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/service/user-service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,21 +38,28 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "inlay.hints",
-    "ts.external.directory.path": "/Users/ihor/Documents/projects/react/jwt-auth/client/node_modules/typescript/lib",
+    "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="jwt-auth" />
       <method v="2">
@@ -100,6 +106,8 @@
       <workItem from="1754416600025" duration="31000" />
       <workItem from="1754416635669" duration="755000" />
       <workItem from="1754418841089" duration="5199000" />
+      <workItem from="1754493070237" duration="2301000" />
+      <workItem from="1754933781373" duration="3442000" />
     </task>
     <servers />
   </component>

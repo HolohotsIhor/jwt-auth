@@ -1,6 +1,6 @@
 import { userService } from '../service/user-service.js';
 
-export class UserController {
+class UserController {
     async registration(req, res, next) {
         try {
             const { email, password } = req.body;
@@ -58,3 +58,5 @@ export class UserController {
         }
     }
 }
+
+export const userController = new UserController();

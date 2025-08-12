@@ -5,9 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { tokenService } from './token-service.js';
 import { UserDto } from '../dtos/user-dto.js';
 
-const uuid = uuidv4();
-
-export class UserService {
+class UserService {
     async registration(email, password) {
         const candidate = await userModel.findOne({ email });
 
@@ -16,7 +14,7 @@ export class UserService {
 
         // Generate hash password
         const hashPassword = await bcrypt.hash(password, 3);
-        const activationLink = uuid.v4(); // Generate random string for activation link
+        const activationLink =  uuidv4(); // Generate random string for activation link
 
         // Save user to database
         const user = await userModel.create({
@@ -24,12 +22,12 @@ export class UserService {
             password: hashPassword,
             activationLink,
         });
-        await mailService.sendActivationMail(email, activationLink);
+        await mailService.sendActivationEmail(email, activationLink);
 
         // Create userDto
         const userDto = new UserDto(user); // id, email, activationLink
         const tokens = tokenService.generateToken({ ...userDto });
-        await tokenService.saveToken(userDto.id, tokens.refreshToken);
+        await tokenService.saveToken(userDto.id, `${process.env.API_URL}/api/activate/${tokens.refreshToken}`);
 
         return {
             ...tokens,

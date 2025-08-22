@@ -1,10 +1,15 @@
 import { userService } from '../service/user-service.js';
+import { validationResult } from 'express-validator';
+import { ApiError } from '../exceptions/api-error.js';
 
 class UserController {
     async registration(req, res, next) {
         try {
+            const errors = validationResult(req);
             const { email, password } = req.body;
             const userData = await userService.registration(email, password);
+
+            if (!errors.isEmpty()) next(ApiError.badRequest('Ошибка регистрации', errors.array()));
 
             res.cookie(
                 'refreshToken',
@@ -14,7 +19,7 @@ class UserController {
 
             return res.json(userData);
         } catch (e) {
-            throw new Error(e);
+            next(e);
         }
     }
 
@@ -30,7 +35,7 @@ class UserController {
         try {
 
         } catch (e) {
-
+            next(e);
         }
     }
 
@@ -43,7 +48,7 @@ class UserController {
             await userService.activate(activationLink);
             return res.redirect(process.env.CLIENT_URL);
         } catch (e) {
-            throw new Error('Activation failed');
+            next('Activation failed');
         }
     }
 
@@ -51,7 +56,7 @@ class UserController {
         try {
 
         } catch (e) {
-ƒ
+            next(e);
         }
     }
 
@@ -59,7 +64,7 @@ class UserController {
         try {
             res.json(['123', '234']);
         } catch (e) {
-
+            next(e);
         }
     }
 }

@@ -4,13 +4,14 @@ import bcrypt from 'bcrypt';
 import { v4 as uuidv4 } from 'uuid';
 import { tokenService } from './token-service.js';
 import { UserDto } from '../dtos/user-dto.js';
+import { ApiError } from '../exceptions/api-error.js';
 
 class UserService {
     async registration(email, password) {
         const candidate = await userModel.findOne({ email });
 
         // Check if user with this email already exists
-        if (candidate) throw new Error('User with this email already has access');
+        if (candidate) throw ApiError.BadRequestError(`User with this email ${email} already has access`);
 
         // Generate hash password
         const hashPassword = await bcrypt.hash(password, 3);
@@ -37,7 +38,7 @@ class UserService {
 
     async activate(activationLink) {
         const user = await userModel.findOne({ activationLink });
-        if (!user) throw new Error('User not found');
+        if (!user) throw ApiError.BadRequestError('User not found');
 
         user.isActivated = true;
         await user.save();

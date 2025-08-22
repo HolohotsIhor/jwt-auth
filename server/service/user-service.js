@@ -22,7 +22,7 @@ class UserService {
             password: hashPassword,
             activationLink,
         });
-        await mailService.sendActivationEmail(email, activationLink);
+        await mailService.sendActivationEmail(email, `${process.env.API_URL}/api/activate/${activationLink}`);
 
         // Create userDto
         const userDto = new UserDto(user); // id, email, activationLink
@@ -33,6 +33,14 @@ class UserService {
             ...tokens,
             user: userDto,
         }
+    }
+
+    async activate(activationLink) {
+        const user = await userModel.findOne({ activationLink });
+        if (!user) throw new Error('User not found');
+
+        user.isActivated = true;
+        await user.save();
     }
 }
 

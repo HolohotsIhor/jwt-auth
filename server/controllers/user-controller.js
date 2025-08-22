@@ -36,9 +36,14 @@ class UserController {
 
     async activate(req, res, next) {
         try {
+            const activationLink = req.params.link;
 
+            // if(!activationLink) throw new Error('Invalid activation link');
+
+            await userService.activate(activationLink);
+            return res.redirect(process.env.CLIENT_URL);
         } catch (e) {
-
+            throw new Error('Activation failed');
         }
     }
 
@@ -46,7 +51,7 @@ class UserController {
         try {
 
         } catch (e) {
-
+ƒ
         }
     }
 

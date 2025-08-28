@@ -28,12 +28,9 @@ class UserService {
         // Create userDto
         const userDto = new UserDto(user); // id, email, activationLink
         const tokens = tokenService.generateToken({ ...userDto });
-        await tokenService.saveToken(userDto.id, `${process.env.API_URL}/api/activate/${tokens.refreshToken}`);
+        await tokenService.saveToken(userDto.id, tokens.refreshToken);
 
-        return {
-            ...tokens,
-            user: userDto,
-        }
+        return { ...tokens, user: userDto }
     }
 
     async activate(activationLink) {
@@ -42,6 +39,30 @@ class UserService {
 
         user.isActivated = true;
         await user.save();
+    }
+
+    async login(email, password) {
+        const user = await userModel.findOne({ email });
+        if (!user) throw ApiError.BadRequestError('User not found');
+
+        const isPassEqueal = await bcrypt.compare(password, user.password);
+        if (!isPassEqueal) throw ApiError.BadRequestError('Password is not correct');
+
+        const userDto = new UserDto(user);
+        const tokens = tokenService.generateToken({ ...userDto });
+
+        await tokenService.saveToken(userDto.id, tokens.refreshToken);
+
+        return { ...tokens, user: userDto }
+    }
+
+    async logout(refreshToken) {
+        const token = await tokenService.removeToken(refreshToken);
+        return token;
+    }
+
+    async refresh(refreshToken) {
+        if (!refreshToken) throw ApiError.UnauthorizedError();
     }
 }
 

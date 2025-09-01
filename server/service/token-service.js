@@ -3,7 +3,7 @@ import { tokenModel } from '../models/token-model.js';
 
 class TokenService {
     generateToken(payload) {
-        const accessToken = jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '30m' });
+        const accessToken = jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '30s' });
         const refreshToken = jwt.sign(payload, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '30d' });
 
         return {
@@ -29,26 +29,27 @@ class TokenService {
         return tokenData;
     }
 
-    async validateAccessToken(accessToken) {
+    validateAccessToken(accessToken) {
         try {
             const userData = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
+
             return userData;
         } catch (error) {
             return null;
         }
     }
 
-    async validateRefreshToken(refresToken) {
+    validateRefreshToken(refreshToken) {
         try {
-            const userData = jwt.verify(refresToken, process.env.REFRESH_TOKEN_SECRET);
+            const userData = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
             return userData;
         } catch (error) {
             return null;
         }
     }
 
-    async findRefreshToken(refresToken) {
-        const tokenData = await tokenModel.findOne({ refresToken });
+    async findRefreshToken(refreshToken) {
+        const tokenData = await tokenModel.findOne({ refreshToken });
         return tokenData;
     }
 }

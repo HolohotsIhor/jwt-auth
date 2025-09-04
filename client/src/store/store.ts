@@ -25,8 +25,9 @@ export default class Store {
 
     async login (email: string, password: string) {
         try {
-            const response = AuthService.login(email, password);
-            localStorage.getItem('token', response.data.accessToken);
+            const response = await AuthService.login(email, password);
+            console.log('Login response: ', response);
+            localStorage.setItem(TOKEN_KEY, response.data.accessToken);
             this.isAuth = setAuth(true);
             this.user = setUser(response.data.user);
         } catch(e) {
@@ -36,8 +37,9 @@ export default class Store {
 
     async registration (email: string, password: string) {
         try {
-            const response = AuthService.registration(email, password);
-            localStorage.getItem(TOKEN_KEY, response.data.accessToken);
+            const response = await AuthService.registration(email, password);
+            console.log('Registration response: ', response);
+            localStorage.setItem(TOKEN_KEY, response.data.accessToken);
             this.isAuth = setAuth(true);
             this.user = setUser(response.data.user);
         } catch(e) {
@@ -47,7 +49,8 @@ export default class Store {
 
     async logout () {
         try {
-            const response = AuthService.logout();
+            const response = await AuthService.logout();
+            console.log('Logout: ', response);
             localStorage.removeItem(TOKEN_KEY);
             this.isAuth = setAuth(false);
             this.user = setUser({} as IUser);

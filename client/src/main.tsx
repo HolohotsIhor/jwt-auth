@@ -10,7 +10,6 @@ interface IStoreContext {
     store: Store
 }
 
-// создаём контекст (по умолчанию null, чтобы не было ошибки)
 export const Context = createContext<IStoreContext | null>(null)
 
 createRoot(document.getElementById('root')!).render(

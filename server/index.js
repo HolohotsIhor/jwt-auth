@@ -14,7 +14,10 @@ const app = express();
 // Middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({
+    credentials: true,
+    origin: process.env.CLIENT_URL,
+}));
 app.use('/api', router);
 app.use(errorMiddleware); // Middleware for errors. Is always included last
 

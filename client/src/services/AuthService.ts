@@ -21,4 +21,9 @@ export default class AuthService {
     static async logout(): Promise<void> {
         return $api.post('/logout');
     }
+
+    static async checkAuth(): Promise<boolean> {
+        return $api.get('/auth/me')
+            .then(response => response.data)
+    }
 }

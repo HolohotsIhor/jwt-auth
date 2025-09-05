@@ -1,7 +1,8 @@
 import { useContext, useState } from 'react';
 import { Context } from '../../main';
+import { observer } from 'mobx-react-lite';
 
-export const LoginForm = () => {
+const LoginFormComponent = () => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const { store } = useContext(Context);
@@ -25,3 +26,5 @@ export const LoginForm = () => {
         </div>
     );
 }
+
+export const LoginForm = observer(LoginFormComponent);
